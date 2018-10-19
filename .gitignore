@@ -1,0 +1,21 @@
+.classpath
+.project
+.settings
+eclipse
+.idea
+*.iml
+*.ipr
+*.iws
+*.class
+
+bin
+build
+target
+.gradle
+out
+run
+
+/dependency-reduced-pom.xml
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
