@@ -20,3 +20,22 @@ dependencies {
     compile group: "com.sk89q", name: "commandhelper", version: "3.3.3-SNAPSHOT"
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+/*
+task processAnnotations(type: JavaCompile) {
+    source = sourceSets.main.java
+    classpath = configurations.compile
+    options.compilerArgs.addAll(["-proc:only", "-processor", "com.laytonsmith.core.extensions.ExtensionAnnotationProcessor"])
+    destinationDir = new File("src/main/generated")
+}
+
+tasks.compileJava.dependsOn tasks.processAnnotations
+
+task cacheAnnotations(type: JavaExec) {
+    main "com.laytonsmith.PureUtilities.ClassLoading.Annotations.CacheAnnotations"
+    args(rootProject.projectDir.absolutePath + "/build/classes/java/main", rootProject.projectDir.absolutePath + "/build/classes/java/main")
+    classpath configurations.runtime
+}
+
+tasks.build.dependsOn tasks.cacheAnnotations
+*/

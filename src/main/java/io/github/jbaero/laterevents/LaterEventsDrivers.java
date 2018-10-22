@@ -123,4 +123,46 @@ public class LaterEventsDrivers
 			return false;
 		}
 	}
+
+	@api
+	public static class player_login_lm extends PlayerEvents.player_login {
+		@Override
+		public String getName() {
+			return "player_login_lm";
+		}
+	}
+
+	@api
+	public static class player_login_ro extends PlayerEvents.player_login {
+		@Override
+		public String getName() {
+			return "player_login_ro";
+		}
+
+		@Override
+		public boolean modifyEvent(String key, Construct value, BindableEvent e) {
+			return false;
+		}
+	}
+
+	@api
+	public static class player_join_lm extends PlayerEvents.player_join {
+		@Override
+		public String getName() {
+			return "player_join_lm";
+		}
+	}
+
+	@api
+	public static class player_join_ro extends PlayerEvents.player_join {
+		@Override
+		public String getName() {
+			return "player_join_ro";
+		}
+
+		@Override
+		public boolean modifyEvent(String key, Construct value, BindableEvent e) {
+			return false;
+		}
+	}
 }

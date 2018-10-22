@@ -1,6 +1,5 @@
 package io.github.jbaero.laterevents;
 
-import com.laytonsmith.abstraction.StaticLayer;
 import com.laytonsmith.abstraction.bukkit.events.BukkitBlockEvents.BukkitMCBlockPlaceEvent;
 import com.laytonsmith.abstraction.bukkit.events.BukkitBlockEvents.BukkitMCBlockBreakEvent;
 import com.laytonsmith.abstraction.bukkit.events.BukkitEntityEvents.BukkitMCPlayerInteractEntityEvent;
@@ -47,7 +46,7 @@ public class BukkitLaterListener implements Listener, LaterEventsExtension.Later
 	}
 
 	@EventHandler(priority = EventPriority.HIGHEST)
-	public void onPlayerInteractEntityH(PlayerInteractEvent event) {
+	public void onPlayerInteractEntityH(PlayerInteractEntityEvent event) {
 		BukkitMCPlayerInteractEntityEvent e = new BukkitMCPlayerInteractEntityEvent(event);
 		EventUtils.TriggerListener(Driver.PLAYER_INTERACT_ENTITY, "player_interact_entity_lm", e);
 	}
