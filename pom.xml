@@ -6,7 +6,7 @@
 
     <groupId>io.github.jbaero</groupId>
     <artifactId>laterevents</artifactId>
-    <version>0.1.0</version>
+    <version>1.0.0</version>
 
     <name>LaterEvents</name>
 
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.sk89q</groupId>
             <artifactId>commandhelper</artifactId>
-            <version>3.3.3-SNAPSHOT</version>
+            <version>3.3.4-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

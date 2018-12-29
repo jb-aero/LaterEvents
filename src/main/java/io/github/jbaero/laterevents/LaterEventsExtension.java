@@ -9,10 +9,10 @@ import com.laytonsmith.core.extensions.MSExtension;
 @MSExtension("LaterEvents")
 public class LaterEventsExtension extends AbstractExtension
 {
-	LaterListener listener;
+	private LaterListener listener;
 	@Override
 	public Version getVersion() {
-		return new SimpleVersion(0, 1, 0);
+		return new SimpleVersion(1, 0, 0);
 	}
 
 	@Override

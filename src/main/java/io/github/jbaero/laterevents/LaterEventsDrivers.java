@@ -1,11 +1,11 @@
 package io.github.jbaero.laterevents;
 
 import com.laytonsmith.annotations.api;
-import com.laytonsmith.core.constructs.Construct;
 import com.laytonsmith.core.events.BindableEvent;
 import com.laytonsmith.core.events.drivers.BlockEvents;
 import com.laytonsmith.core.events.drivers.EntityEvents;
 import com.laytonsmith.core.events.drivers.PlayerEvents;
+import com.laytonsmith.core.natives.interfaces.Mixed;
 
 public class LaterEventsDrivers
 {
@@ -27,7 +27,7 @@ public class LaterEventsDrivers
 		}
 
 		@Override
-		public boolean modifyEvent(String key, Construct value, BindableEvent event) {
+		public boolean modifyEvent(String key, Mixed value, BindableEvent event) {
 			return false;
 		}
 	}
@@ -50,7 +50,7 @@ public class LaterEventsDrivers
 		}
 
 		@Override
-		public boolean modifyEvent(String key, Construct value, BindableEvent event) {
+		public boolean modifyEvent(String key, Mixed value, BindableEvent event) {
 			return false;
 		}
 	}
@@ -73,7 +73,7 @@ public class LaterEventsDrivers
 		}
 
 		@Override
-		public boolean modifyEvent(String key, Construct value, BindableEvent event) {
+		public boolean modifyEvent(String key, Mixed value, BindableEvent event) {
 			return false;
 		}
 	}
@@ -96,7 +96,7 @@ public class LaterEventsDrivers
 		}
 
 		@Override
-		public boolean modifyEvent(String key, Construct value, BindableEvent event) {
+		public boolean modifyEvent(String key, Mixed value, BindableEvent event) {
 			return false;
 		}
 	}
@@ -119,7 +119,7 @@ public class LaterEventsDrivers
 		}
 
 		@Override
-		public boolean modifyEvent(String key, Construct value, BindableEvent event) {
+		public boolean modifyEvent(String key, Mixed value, BindableEvent event) {
 			return false;
 		}
 	}
@@ -140,7 +140,7 @@ public class LaterEventsDrivers
 		}
 
 		@Override
-		public boolean modifyEvent(String key, Construct value, BindableEvent e) {
+		public boolean modifyEvent(String key, Mixed value, BindableEvent e) {
 			return false;
 		}
 	}
@@ -161,7 +161,7 @@ public class LaterEventsDrivers
 		}
 
 		@Override
-		public boolean modifyEvent(String key, Construct value, BindableEvent e) {
+		public boolean modifyEvent(String key, Mixed value, BindableEvent e) {
 			return false;
 		}
 	}
