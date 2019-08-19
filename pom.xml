@@ -6,14 +6,18 @@
 
     <groupId>io.github.jbaero</groupId>
     <artifactId>laterevents</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 
     <name>LaterEvents</name>
 
     <repositories>
         <repository>
             <id>sk89q-mvn2</id>
-            <url>http://mvn2.sk89q.com/repo</url>
+            <url>http://maven.sk89q.com/repo</url>
+        </repository>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
     </repositories>
 

@@ -165,4 +165,67 @@ public class LaterEventsDrivers
 			return false;
 		}
 	}
+
+	@api
+	public static class entity_damage_lm extends EntityEvents.entity_damage {
+		@Override
+		public String getName() {
+			return "entity_damage_lm";
+		}
+	}
+
+	@api
+	public static class entity_damage_ro extends EntityEvents.entity_damage {
+		@Override
+		public String getName() {
+			return "entity_damage_ro";
+		}
+
+		@Override
+		public boolean modifyEvent(String key, Mixed value, BindableEvent e) {
+			return false;
+		}
+	}
+
+	@api
+	public static class entity_damage_player_lm extends EntityEvents.entity_damage_player {
+		@Override
+		public String getName() {
+			return "entity_damage_player_lm";
+		}
+	}
+
+	@api
+	public static class entity_damage_player_ro extends EntityEvents.entity_damage_player {
+		@Override
+		public String getName() {
+			return "entity_damage_player_ro";
+		}
+
+		@Override
+		public boolean modifyEvent(String key, Mixed value, BindableEvent e) {
+			return false;
+		}
+	}
+
+	@api
+	public static class projectile_hit_lm extends EntityEvents.projectile_hit {
+		@Override
+		public String getName() {
+			return "projectile_hit_lm";
+		}
+	}
+
+	@api
+	public static class projectile_hit_ro extends EntityEvents.projectile_hit {
+		@Override
+		public String getName() {
+			return "projectile_hit_ro";
+		}
+
+		@Override
+		public boolean modifyEvent(String key, Mixed value, BindableEvent e) {
+			return false;
+		}
+	}
 }

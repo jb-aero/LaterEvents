@@ -20,7 +20,7 @@ the read-only versions cannot be cancelled or modified
 
 ## Events
 ### Note:
-[*See original documentation for details*](https://methodscript.com/docs/3.3.3/Event_API.html)
+[*See original documentation for details*](https://methodscript.com/docs/3.3.4/Event_API.html)
 - player_interact_lm
 - player_interact_ro
 - player_interact_entity_lm
@@ -35,3 +35,9 @@ the read-only versions cannot be cancelled or modified
 - block_break_ro
 - block_place_lm
 - block_place_ro
+- projectile_hit_lm
+- projectile_hit_ro
+- entity_damage_lm
+- entity_damage_ro
+- entity_damage_player_lm
+- entity_damage_player_ro

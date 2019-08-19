@@ -1,7 +1,11 @@
 package io.github.jbaero.laterevents;
 
+import com.laytonsmith.abstraction.MCPlayer;
 import com.laytonsmith.abstraction.bukkit.events.BukkitBlockEvents.BukkitMCBlockPlaceEvent;
 import com.laytonsmith.abstraction.bukkit.events.BukkitBlockEvents.BukkitMCBlockBreakEvent;
+import com.laytonsmith.abstraction.bukkit.events.BukkitEntityEvents.BukkitMCProjectileHitEvent;
+import com.laytonsmith.abstraction.bukkit.events.BukkitEntityEvents.BukkitMCEntityDamageEvent;
+import com.laytonsmith.abstraction.bukkit.events.BukkitEntityEvents.BukkitMCEntityDamageByEntityEvent;
 import com.laytonsmith.abstraction.bukkit.events.BukkitEntityEvents.BukkitMCPlayerInteractEntityEvent;
 import com.laytonsmith.abstraction.bukkit.events.BukkitEntityEvents.BukkitMCPlayerInteractAtEntityEvent;
 import com.laytonsmith.abstraction.bukkit.events.BukkitPlayerEvents.BukkitMCPlayerLoginEvent;
@@ -17,6 +21,9 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -115,5 +122,47 @@ public class BukkitLaterListener implements Listener, LaterEventsExtension.Later
 	public void onPlayerJoinM(PlayerJoinEvent event) {
 		BukkitMCPlayerJoinEvent e = new BukkitMCPlayerJoinEvent(event);
 		EventUtils.TriggerListener(Driver.PLAYER_JOIN, "player_join_ro", e);
+	}
+
+	@EventHandler(priority = EventPriority.HIGHEST)
+	public void onProjectileHitH(ProjectileHitEvent event) {
+		BukkitMCProjectileHitEvent e = new BukkitMCProjectileHitEvent(event);
+		EventUtils.TriggerListener(Driver.PROJECTILE_HIT, "projectile_hit_lm", e);
+	}
+
+	@EventHandler(priority = EventPriority.MONITOR)
+	public void onProjectileHitM(ProjectileHitEvent event) {
+		BukkitMCProjectileHitEvent e = new BukkitMCProjectileHitEvent(event);
+		EventUtils.TriggerListener(Driver.PROJECTILE_HIT, "projectile_hit_ro", e);
+	}
+
+	@EventHandler(priority = EventPriority.HIGHEST)
+	public void onEntityDamageH(EntityDamageEvent event) {
+		BukkitMCEntityDamageEvent ede;
+		if(event instanceof EntityDamageByEntityEvent) {
+			ede = new BukkitMCEntityDamageByEntityEvent(event);
+			EventUtils.TriggerListener(Driver.ENTITY_DAMAGE, "entity_damage_lm", ede);
+			if(ede.getEntity() instanceof MCPlayer) {
+				EventUtils.TriggerListener(Driver.ENTITY_DAMAGE_PLAYER, "entity_damage_player_lm", ede);
+			}
+		} else {
+			ede = new BukkitMCEntityDamageEvent(event);
+			EventUtils.TriggerListener(Driver.ENTITY_DAMAGE, "entity_damage_lm", ede);
+		}
+	}
+
+	@EventHandler(priority = EventPriority.MONITOR)
+	public void onEntityDamageM(EntityDamageEvent event) {
+		BukkitMCEntityDamageEvent ede;
+		if(event instanceof EntityDamageByEntityEvent) {
+			ede = new BukkitMCEntityDamageByEntityEvent(event);
+			EventUtils.TriggerListener(Driver.ENTITY_DAMAGE, "entity_damage_ro", ede);
+			if(ede.getEntity() instanceof MCPlayer) {
+				EventUtils.TriggerListener(Driver.ENTITY_DAMAGE_PLAYER, "entity_damage_player_ro", ede);
+			}
+		} else {
+			ede = new BukkitMCEntityDamageEvent(event);
+			EventUtils.TriggerListener(Driver.ENTITY_DAMAGE, "entity_damage_ro", ede);
+		}
 	}
 }

@@ -12,7 +12,7 @@ public class LaterEventsExtension extends AbstractExtension
 	private LaterListener listener;
 	@Override
 	public Version getVersion() {
-		return new SimpleVersion(1, 0, 0);
+		return new SimpleVersion(1, 1, 0);
 	}
 
 	@Override
